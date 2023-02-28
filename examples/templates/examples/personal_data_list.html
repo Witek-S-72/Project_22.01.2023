@@ -1,0 +1,31 @@
+{% extends 'examples/base.html' %}
+
+{% block title %} TO JEST WIDOK LISTY DANYCH OSOBOWYCH {% endblock %}
+
+{% block main_content %}
+
+{% if personal_data.exists %}
+<table>
+    <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Data urodzenia</th>
+            <th>Szczegóły</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in personal_data %}
+    <tr>
+        <td>{{i.first_name}}</td>
+        <td>{{i.last_name}}</td>
+        <td>{{i.date_of_birth|date:"Y-m-d"}}</td>
+        <td><a href="{% url 'personal_data_detail' i.id %}">Detale</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<strong>BRAK WPROWADZONYCH DANYCH OSOBOWYCH</strong>
+{% endif %}
+{% endblock %}

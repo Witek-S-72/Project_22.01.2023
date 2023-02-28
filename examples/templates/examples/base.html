@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {% block title %} Test title {% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'examples/css/style.css' %}">
+</head>
+
+<body>
+  <div id="header"> <div id="logo"><strong>MÓJ PROJEKT STRONY</strong></div></div>
+  <div id="wrapper">
+    <div id="menu">
+        {% include 'examples/examples_menu.html' %}
+        {% include 'notes/notes_menu.html' %}
+    </div>
+    <div id="main_content">
+        {% block main_content %}
+        <h1> nagłówek h1 nagłówek h1 nagłówek </h1>
+        <h2>nagłówek h2 nagłówek h2 nagłówek </h2>
+        <p>
+        "paragraf do opisu czegoś tam "
+        </p>
+        <h2>nagłówek h2 nagłówek h2 nagłówek</h2>
+        <p>
+        "paragraf do opisu czegoś tam "
+        </p>
+        <h2>nagłówek h2 nagłówek h2 nagłówek</h2>
+        <p>
+        "paragraf do opisu czegoś tam "
+        </p>
+        <h2>nagłówek h2 nagłówek h2 nagłówek</h2>
+        <p>
+        "paragraf do opisu czegoś tam "
+        </p>
+        <h2>nagłówek h2 nagłówek h2 nagłówek</h2>
+        <p> 
+        "paragraf do opisu czegoś tam "
+        </p>
+        {% endblock %}
+    </div>
+    <div style="clear:both;"></div>
+  <div>
+
+  
+  <div id="footer">{% block footer %}(C) TO JEST SEKCJA STOPKI - FOOTER  {% endblock %}</div>
+</body>
+
+</html>

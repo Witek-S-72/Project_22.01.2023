@@ -1,0 +1,11 @@
+<br>
+<strong>Notes Menu</strong>
+
+
+  <ul>
+    <li> <a href="{% url 'note_list' %}">Lista Notatek</a></li>
+    <li> <a href="{% url 'note_unpublished_list' %}">Publikacja ({{counter}}) </a></li>
+    <li> <a href="{% url 'note_published_list' %}">Bez publikacji ({{counter}}) </a></li>
+    <li> <a href="{% url 'note_redacted_list' %}">W redakcji ({{counter}}) </a></li>
+  </ul>
+

@@ -1,0 +1,19 @@
+{% extends 'examples/base.html' %}
+
+{% block title %} TO JEST DETAIL NOTATKI {% endblock %}
+
+{% block main_content %}
+<h1>TO JEST WIDOK DETAILA NOTATKI</h1>
+<table>
+    <tr>
+        <th>Tytuł notatki</th><td>{{note.title}}</td>
+    </tr>
+    <tr>
+        <th>Data i czas utworzenia</th><td>{{note.creation_datetime}}</td>
+    </tr>
+    <tr>
+        <th>Status notatki</th><td>{{note.status}}</td>
+    </tr>
+</table>
+{% endblock %}
+

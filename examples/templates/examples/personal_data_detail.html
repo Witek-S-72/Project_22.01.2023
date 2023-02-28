@@ -1,0 +1,20 @@
+{% extends 'examples/base.html' %}
+
+{% block title %} DANE OSOBOWE {% endblock %}
+
+{% block main_content %}
+<h1>  TO JEST WIDOK DETAIL DANYCH OSOBOWYCH </h1>
+<table>
+    <tr>
+        <th>Imię</th><td>{{personal_data.first_name}}</td>
+    </tr>
+    <tr>
+        <th>Nazwisko</th><td>{{personal_data.last_name}}</td>
+    </tr>
+    <tr>
+        <th>Data urodzenia</th><td>{{personal_data.date_of_birth}}</td>
+    </tr>
+
+</table>
+{{ personal_data }}
+{% endblock %}

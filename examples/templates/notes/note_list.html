@@ -1,0 +1,30 @@
+{% extends 'examples/base.html' %}
+
+{% block title %} WIDOK LISTY NOTATEK {% endblock %}
+
+{% block main_content %}
+{% if notes.exists %}
+<table>
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Data utworzenia</th>
+            <th>Status</th>
+            <th>Szczegóły</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in notes %}
+        <tr>
+            <td>{{i.title}}</td>
+            <td>{{i.creation_datetime}}</td>
+            <td>{{i.get_status_display}}</td>
+            <td><a href="{% url 'note_detail' i.id %}">Widok notatki</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<strong>BRAK ZAREJESTROWANYCHNOTATEK</strong>
+{% endif %}
+{% endblock %}
